@@ -1,0 +1,12 @@
+{
+    "name": "rooxie/global-settings",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roman Derlemenko",
+            "email": "romanderlemenko@gmail.com"
+        }
+    ],
+    "require": {}
+}
