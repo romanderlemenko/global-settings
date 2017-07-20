@@ -9,8 +9,6 @@ install_phpstorm_theme() {
     done
 }
 
-#fc-cache -f -v
-
 install_local_fonts() {
     for font in $(ls -p fonts | grep -v /); do
         cp fonts/$font ~/.local/share/fonts/$font
@@ -46,3 +44,4 @@ rm -rf tmp
 install_local_fonts
 install_phpstorm_theme
 
+fc-cache -f -v
