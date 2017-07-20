@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+#
+# Install PhpStorm theme
+#
+for folder in $(ls -a ~); do
+    if [[ $folder == .PhpStorm* ]] ;
+    then
+        cp themes/phpstorm/Rooxie.icls ~/$folder/config/colors/Rooxie.icls
+    fi
+done
+
+#
+# Install fonts
+#
+for font in $(ls -p fonts | grep -v /); do
+    cp fonts/$font ~/.local/share/fonts/$font
+done
+fc-cache -f -v
