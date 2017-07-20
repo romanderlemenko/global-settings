@@ -18,10 +18,10 @@ installPhp() {
 }
 
 installComposer() {
-    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-    php -r "if (hash_file('SHA384', 'composer-setup.php') === '669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-    php composer-setup.php
-    php -r "unlink('composer-setup.php');"
+    php.sh -r "copy('https://getcomposer.org/installer', 'composer-setup.php.sh');"
+    php.sh -r "if (hash_file('SHA384', 'composer-setup.php.sh') === '669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php.sh'); } echo PHP_EOL;"
+    php.sh composer-setup.php
+    php.sh -r "unlink('composer-setup.php.sh');"
 
     mv composer.phar /usr/local/bin/composer
 }
@@ -46,6 +46,8 @@ apt -y install htop
 apt -y install lm-sensors
 apt -y install curl
 apt -y install wget
+apt -y install apache2
+apt -y install nginx
 
 apt-get autoremove
 apt -f install
